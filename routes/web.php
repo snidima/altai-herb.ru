@@ -56,3 +56,16 @@ Route::group([ 'middleware' => 'auth', 'prefix'=>'user'], function()
 });
 
 
+
+
+Route::get('/payment', function(){
+    return view('payment');
+})->name('payment');
+
+Route::get('/information', function(){
+    return view('information');
+})->name('information');
+
+Route::get('/contacts', function(){
+    return view('contacts');
+})->name('contacts');

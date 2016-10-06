@@ -2,9 +2,9 @@
     <div class="main-header-left main-header__item">
         <ul class="header-menu-top">
             <li data-active="true" class="header-menu-top__item"><a href="{{route('shop')}}">Магазин</a></li>
-            <li class="header-menu-top__item"><a href="#">Оплата и доставка</a></li>
-            <li class="header-menu-top__item"><a href="#">Информация</a></li>
-            <li class="header-menu-top__item"><a href="#">Контакты</a></li>
+            <li class="header-menu-top__item"><a href="{{route('payment')}}">Оплата и доставка</a></li>
+            <li class="header-menu-top__item"><a href="{{route('information')}}">Информация</a></li>
+            <li class="header-menu-top__item"><a href="{{route('contacts')}}">Контакты</a></li>
         </ul>
         <div class="header-menu-line"></div>
         <ul class="header-menu-bottom">

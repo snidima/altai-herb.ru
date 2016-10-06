@@ -162,7 +162,12 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+
+        //ДЕБАГЕР
         Barryvdh\Debugbar\ServiceProvider::class,
+
+        //АДМИНКА
+        SleepingOwl\Admin\Providers\SleepingOwlServiceProvider::class,
         /*
          * Package Service Providers...
          */
