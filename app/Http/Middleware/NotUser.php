@@ -3,24 +3,27 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
 
-class RedirectIfAuthenticated
+class NotUser
 {
     /**
-     * Handle an incoming request.
+     * Выполнение фильтра запроса.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
-     * @param  string|null  $guard
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = null)
+    public function handle($request, Closure $next)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect('/loginss');
+        if ( Auth::check() ) {
+            return Redirect::intended('/');
         }
+
+
 
         return $next($request);
     }
+
 }

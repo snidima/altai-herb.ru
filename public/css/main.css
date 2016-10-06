@@ -162,7 +162,7 @@
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 1.1rem; }
 
-.enter__col input[type="text"] {
+.enter__col input {
   margin-left: 10px;
   width: 300px;
   display: block;
@@ -172,7 +172,7 @@
   font-size: 1rem;
   color: #656565;
   border: 1px solid transparent; }
-  .enter__col input[type="text"]:focus {
+  .enter__col input:focus {
     color: #000;
     border: 1px solid #ff8600; }
 

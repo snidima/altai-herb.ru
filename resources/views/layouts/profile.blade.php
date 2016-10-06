@@ -9,10 +9,14 @@
     <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}" />
 </head>
 <body>
-<div class="main">
+<div class="main-header-shop">
     @include('blocks/header')
-
-    @yield('content')
 </div>
+<div class="shop-content">
+    <div class="container">
+        <h1 class="h1-shop">Добро пожаловать, {{$userName}}</h1>
+    </div>
+</div>
+
 </body>
 </html>

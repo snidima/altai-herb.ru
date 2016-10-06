@@ -17,7 +17,18 @@
     </div>
     <div class="main-header-center main-header__item"><a href="{{route('main')}}"><img src="{{asset('images/logo-big.png')}}" class="main-logo"/></a></div>
     <div class="main-header-right main-header__item">
-        <div class="header-right-top"><a href="{{route('login')}}">Войти</a><span>/</span><a href="#">регистрация</a></div>
+        <div class="header-right-top">
+
+            @if ( !Auth::check() )
+                <a href="{{route('getLogin')}}">Войти</a>
+                <span>/</span>
+                <a href="{{route('register')}}">регистрация</a>
+            @else
+                <a href="{{route('profile')}}">{{Auth::user()->name}}, {{Auth::user()->email}}</a>
+                <span>/</span>
+                <a href="{{route('logout')}}">выйти</a>
+            @endif
+        </div>
         <div class="header-menu-line-bottom"></div>
         <div class="header-right-bottom"><a href="#" class="header-right-bottom-cart">
                 <div class="header-right-bottom-cart__img"><img src="{{asset('images/cart.png')}}"/></div>

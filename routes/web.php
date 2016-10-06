@@ -26,8 +26,33 @@ Route::get('/shop/category/{id}', ['as' => 'applyCategory', 'uses' => 'ProductCo
 
 
 
-Route::get('/login', function(){
-    return view('login');
-})->name('login');
+
+
+Route::group([ 'middleware' => 'notUser'], function()
+{
+    Route::get('/login', [ 'uses' => 'LoginController@getLogin' ] )->name('getLogin');
+    Route::post('/login', [ 'uses' => 'LoginController@postLogin' ] );
+
+});
+
+Route::get('/logout', [ 'uses' => 'LoginController@logout' ] )->name('logout');
+
+
+
+
+
+Route::get('/register', [ 'uses' => 'LoginController@getRegister' ] )->name('register');
+Route::post('/register', [ 'uses' => 'LoginController@postRegister' ] );
+
+
+
+
+
+Route::group([ 'middleware' => 'auth', 'prefix'=>'user'], function()
+{
+    Route::get('/', 'ProfileController@welcome')->name('profile');
+
+    Route::get('/info', 'ProfileController@userInfo')->name('profileInfo');
+});
 
 
