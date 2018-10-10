@@ -11,6 +11,7 @@ class ProductController extends Controller
 {
     public function main( Product $products, Category $category  )
     {
+
         return view('shop', [
             'products' => $products->getAllProducts(),
             'categories' => $category->getAllCategorys()
